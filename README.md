@@ -18,3 +18,12 @@ sudo ldconfig
 
 Для сборки проекта:
 g++ "исходники" -lmath -o "имя исполняемого модуля"
+
+
+Сборка с CMake:
+
+Команда на подготовку конфигурации для сборки нашего проекта: cmake -B build
+
+Сборка проекта: cmake --build build (полный аналог командам: g++ -c -fPIC src/libmath.cpp -o libmath.o -I./include g++ -shared libmath.o -o libmath.so)
+
+Установка проекта: sudo cmake --build build --target install (аналог командам: sudo cp libmath.so /usr/local/lib/ sudo cp ./include/libmath.h /usr/local/include/)
